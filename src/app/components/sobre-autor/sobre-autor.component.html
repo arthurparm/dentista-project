@@ -1,0 +1,69 @@
+<section
+  class="autor"
+  appIntersect
+  (visible)="onVisible()"
+  [class.section-visible]="sectionVisible()"
+>
+  <div class="autor__container">
+    <div class="autor__visual reveal-element" [class.visible]="sectionVisible()">
+      <div class="autor__photo-wrapper">
+        <div class="autor__photo-ring"></div>
+        <div class="autor__photo-ring autor__photo-ring--2"></div>
+        <img
+          class="autor__photo"
+          src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1"
+          alt="Dr. Danilo Venâncio - Especialista em Lentes de Resina"
+          loading="lazy"
+          width="320"
+          height="320"
+        />
+        <div class="autor__photo-badge">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Especialista Certificado</span>
+        </div>
+      </div>
+
+      <div class="autor__stats">
+        @for (cred of credentials; track cred.label) {
+          <div class="autor__stat">
+            <span class="autor__stat-valor">{{ cred.valor }}</span>
+            <span class="autor__stat-label">{{ cred.label }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="autor__content reveal-element" [class.visible]="sectionVisible()" style="transition-delay: 200ms">
+      <p class="section-label">Sobre o Autor</p>
+      <h2 class="autor__name">Dr. Danilo<br><span>Venâncio</span></h2>
+      <div class="gold-divider" style="margin: 1.5rem 0;"></div>
+
+      <p class="autor__bio">
+        Cirurgião-dentista formado pela USP com especialização em Dentística e Estética
+        pela UNESP, Dr. Danilo Venâncio dedica sua carreira à transformação de sorrisos
+        com abordagem artística e científica.
+      </p>
+      <p class="autor__bio">
+        Pioneiro na divulgação do conceito de lentes de resina no Brasil, ele já ministrou
+        cursos para mais de 500 dentistas e é palestrante em congressos nacionais e internacionais
+        de odontologia estética.
+      </p>
+
+      <ul class="autor__lista">
+        <li>Membro da Academia Brasileira de Odontologia Estética (ABOE)</li>
+        <li>Instrutor certificado pela American Academy of Cosmetic Dentistry</li>
+        <li>Colunista da Revista Brasileira de Odontologia</li>
+        <li>Fellow do International College of Dentists</li>
+      </ul>
+
+      <blockquote class="autor__quote">
+        <span class="autor__quote-mark">&ldquo;</span>
+        <p>
+          Um sorriso bonito não é luxo — é uma ferramenta de transformação pessoal
+          e profissional. Minha missão é democratizar esse conhecimento.
+        </p>
+        <cite>— Dr. Danilo Venâncio</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+<section
+  class="depo"
+  appIntersect
+  (visible)="onVisible()"
+  [class.section-visible]="sectionVisible()"
+>
+  <div class="depo__container">
+    <div class="depo__header reveal-element" [class.visible]="sectionVisible()">
+      <p class="section-label">Resultados Reais</p>
+      <h2 class="section-title">O Que Dizem Sobre o<br><span class="text-gold">Método 5R</span></h2>
+      <div class="gold-divider"></div>
+    </div>
+
+    <div class="depo__cards">
+      @for (d of depoimentos; track d.nome; let i = $index) {
+        <div
+          class="depo-card reveal-element"
+          [class.visible]="sectionVisible()"
+          [style.transition-delay]="(i * 150) + 'ms'"
+        >
+          <div class="depo-card__stars" aria-label="{{ d.estrelas }} estrelas">
+            @for (_ of [1,2,3,4,5]; track $index) {
+              <svg viewBox="0 0 12 12" aria-hidden="true">
+                <path d="M6 1l1.5 3h3l-2.5 2 1 3L6 7.5 3 9l1-3L1.5 4h3z" fill="#C9A84C"/>
+              </svg>
+            }
+          </div>
+          <blockquote class="depo-card__texto">
+            <p>"{{ d.texto }}"</p>
+          </blockquote>
+          <div class="depo-card__autor">
+            <img
+              [src]="d.foto"
+              [alt]="d.nome"
+              class="depo-card__foto"
+              loading="lazy"
+              width="48"
+              height="48"
+            />
+            <div>
+              <strong class="depo-card__nome">{{ d.nome }}</strong>
+              <span class="depo-card__cargo">{{ d.cargo }}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

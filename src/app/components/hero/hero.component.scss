@@ -1,0 +1,388 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  visibility: visible;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  overflow: hidden;
+  padding: var(--spacing-xl) var(--container-padding);
+
+  @media (max-width: 768px) {
+    min-height: 100svh;
+    padding: 2rem var(--container-padding) 4.5rem;
+  }
+
+  &__canvas {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &__bg-shapes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    min-width: 0;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      gap: 1.25rem;
+    }
+  }
+
+  &__title-wrapper {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+  }
+
+  &__logo-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gold));
+    max-width: 60px;
+
+    &:last-child {
+      background: linear-gradient(90deg, var(--color-gold), transparent);
+    }
+  }
+
+  &__title {
+    color: var(--color-white);
+    margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: clamp(1.75rem, 8.2vw, 2rem);
+      line-height: 1.1;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 768px) {
+      .hero__title-word {
+        display: block;
+      }
+    }
+
+    em {
+      font-style: italic;
+      background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light), var(--color-gold));
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 480px;
+    margin: 0;
+    line-height: 1.8;
+
+    strong {
+      color: var(--color-gold);
+      font-weight: 500;
+    }
+  }
+
+  &__cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+
+    @media (max-width: 768px) {
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__subtitle {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      max-width: min(100%, 320px);
+    }
+  }
+
+  &__cta-micro {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+
+  &__mockup {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      order: -1;
+    }
+  }
+
+  &__mockup-wrapper {
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  &__mockup-glow {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 60px;
+    background: radial-gradient(ellipse, rgba(201, 168, 76, 0.2) 0%, transparent 70%);
+    filter: blur(20px);
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  &__book-shadow {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    filter: blur(15px);
+    border-radius: 50%;
+  }
+
+  &__book {
+    width: 240px;
+    height: 320px;
+    border-radius: 4px 12px 12px 4px;
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 100%);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    box-shadow:
+      -8px 0 20px rgba(0, 0, 0, 0.5),
+      0 0 60px rgba(201, 168, 76, 0.1),
+      inset 0 0 40px rgba(201, 168, 76, 0.03);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 20px;
+      background: linear-gradient(90deg, rgba(0,0,0,0.6), rgba(201, 168, 76, 0.05));
+      border-right: 1px solid rgba(201, 168, 76, 0.15);
+    }
+
+    @media (max-width: 768px) {
+      width: 180px;
+      height: 240px;
+    }
+  }
+
+  &__book-cover {
+    padding: 2rem 1.5rem 1.5rem 2.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__book-ornament {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    border-radius: 50%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      border-radius: 50%;
+    }
+  }
+
+  &__book-label {
+    font-family: var(--font-sans);
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin: 0;
+  }
+
+  &__book-title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--color-white);
+    margin: 0;
+    line-height: 1.2;
+
+    span {
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  &__book-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  &__book-author {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    color: rgba(201, 168, 76, 0.7);
+    letter-spacing: 0.1em;
+  }
+
+  &__book-badge {
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    background: var(--color-gold);
+    color: var(--color-bg);
+    font-family: var(--font-sans);
+    font-size: 0.55rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 0.3rem 0.6rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+
+  &__scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 2;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__scroll-text {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  &__scroll-icon {
+    width: 24px;
+    height: 40px;
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 6px;
+  }
+
+  &__scroll-arrow {
+    width: 4px;
+    height: 8px;
+    background: var(--color-gold);
+    border-radius: 2px;
+    animation: scrollBounce 1.5s ease-in-out infinite;
+  }
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.04);
+
+  &--1 {
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    right: -200px;
+    animation: rotateSlow 40s linear infinite;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 60px;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 168, 76, 0.03);
+    }
+  }
+
+  &--2 {
+    width: 400px;
+    height: 400px;
+    bottom: -150px;
+    left: -150px;
+    animation: rotateSlow 30s linear infinite reverse;
+  }
+
+  &--3 {
+    width: 200px;
+    height: 200px;
+    top: 30%;
+    left: 10%;
+    border-color: rgba(201, 168, 76, 0.06);
+    animation: rotateSlow 20s linear infinite;
+  }
+}

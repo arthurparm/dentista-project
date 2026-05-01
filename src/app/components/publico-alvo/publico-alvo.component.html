@@ -1,0 +1,29 @@
+<section
+  class="publico"
+  appIntersect
+  (visible)="onVisible()"
+  [class.section-visible]="sectionVisible()"
+>
+  <div class="publico__container">
+    <div class="publico__header reveal-element" [class.visible]="sectionVisible()">
+      <p class="section-label">Para Quem É</p>
+      <h2 class="section-title">Este eBook Foi Feito<br><em>Para Você Se...</em></h2>
+      <div class="gold-divider"></div>
+    </div>
+
+    <div class="publico__cards">
+      @for (perfil of perfis; track perfil.titulo; let i = $index) {
+        <div
+          class="publico-card reveal-element"
+          [class.visible]="sectionVisible()"
+          [style.transition-delay]="(i * 150) + 'ms'"
+        >
+          <div class="publico-card__icon" [innerHTML]="perfil.icon"></div>
+          <div class="publico-card__badge">{{ perfil.detalhe }}</div>
+          <h4 class="publico-card__title">{{ perfil.titulo }}</h4>
+          <p class="publico-card__desc">{{ perfil.descricao }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

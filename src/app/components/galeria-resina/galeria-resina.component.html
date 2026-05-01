@@ -1,0 +1,53 @@
+<section class="galeria" aria-labelledby="galeria-resina-title">
+  <div class="galeria__container">
+    <div class="galeria__header">
+      <p class="section-label">Galeria</p>
+      <h2 id="galeria-resina-title" class="section-title">Galeria &ndash; <span class="text-gold">Lentes de Resina</span></h2>
+      <div class="gold-divider"></div>
+      <p class="galeria__intro">
+        Registros visuais de resultados estéticos com lentes de resina. As mídias abaixo são placeholders para a versão inicial.
+      </p>
+    </div>
+
+    <div class="galeria__grid">
+      @for (item of galleryItems; track item.src) {
+        <button type="button" class="galeria-card" (click)="openLightbox(item)">
+          <span class="galeria-card__media">
+            @if (item.type === 'image') {
+              <!-- TODO: Replace placeholder image URLs with real resin lens media. -->
+              <img [src]="item.src" [alt]="item.alt" loading="lazy" width="900" height="700" />
+            } @else {
+              <!-- TODO: Replace placeholder video URLs with real resin lens media. -->
+              <video [src]="item.src" [poster]="item.poster" autoplay muted loop playsinline></video>
+              <span class="galeria-card__play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M8 5v14l11-7L8 5z" fill="currentColor"/>
+                </svg>
+              </span>
+            }
+          </span>
+          <span class="galeria-card__caption">{{ item.title }}</span>
+        </button>
+      }
+    </div>
+  </div>
+
+  @if (selectedMedia(); as media) {
+    <div class="galeria-lightbox" role="dialog" aria-modal="true" [attr.aria-label]="media.title" (click)="closeLightbox()">
+      <button type="button" class="galeria-lightbox__close" aria-label="Fechar galeria" (click)="closeLightbox()">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <div class="galeria-lightbox__content" (click)="$event.stopPropagation()">
+        @if (media.type === 'image') {
+          <img [src]="media.src" [alt]="media.alt" />
+        } @else {
+          <video [src]="media.src" [poster]="media.poster" autoplay muted loop playsinline controls></video>
+        }
+        <p>{{ media.title }}</p>
+      </div>
+    </div>
+  }
+</section>

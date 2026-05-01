@@ -1,0 +1,44 @@
+<section id="pricing-ebook" class="pricing" aria-labelledby="pricing-ebook-title">
+  <div class="pricing__container">
+    <div class="pricing__header">
+      <p class="section-label">Investimento</p>
+      <h2 id="pricing-ebook-title" class="section-title">Ebook <span class="text-gold">Método 5R</span></h2>
+      <div class="gold-divider"></div>
+    </div>
+
+    <article class="pricing-card">
+      <div class="pricing-card__badge">Oferta promocional</div>
+      <div class="pricing-card__content">
+        <p class="pricing-card__label">Ebook Digital</p>
+        <h3 class="pricing-card__title">Transformação do Sorriso com Lentes de Resina</h3>
+        <p class="pricing-card__description">
+          Um guia prático para entender, planejar e aplicar o Método 5R com mais segurança clínica e estética.
+        </p>
+
+        <ul class="pricing-card__benefits">
+          @for (benefit of benefits; track benefit) {
+            <li>
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10.5 8 14l8-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>{{ benefit }}</span>
+            </li>
+          }
+        </ul>
+
+        <div class="pricing-card__price" aria-label="Preço promocional">
+          <!-- TODO: Replace placeholder prices with the real original and promotional ebook prices. -->
+          <span class="pricing-card__original">De R$ XX,XX</span>
+          <strong class="pricing-card__promo">R$ XX,XX</strong>
+        </div>
+
+        <a [href]="ctaHref" target="_blank" rel="noopener noreferrer" class="btn btn--gold btn--lg pricing-card__cta">
+          <span>Quero o Ebook</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,67 @@
+<section class="hero">
+  <canvas #canvas class="hero__canvas" aria-hidden="true"></canvas>
+  <div class="hero__bg-shapes" aria-hidden="true">
+    <div class="shape shape--1"></div>
+    <div class="shape shape--2"></div>
+    <div class="shape shape--3"></div>
+  </div>
+
+  <div class="hero__container">
+    <div class="hero__content">
+      <div class="hero__logo" [@fadeIn]="titleState">
+        <span class="hero__logo-line"></span>
+        <p class="section-label">Dr. Danilo Venâncio</p>
+        <span class="hero__logo-line"></span>
+      </div>
+
+      <div class="hero__title-wrapper" [@fadeInUp]="titleState">
+        <h1 class="hero__title">
+          <span class="hero__title-word">Transforme</span> <span class="hero__title-word">Sorrisos.</span><br>
+          <em>Transforme Vidas.</em>
+        </h1>
+      </div>
+
+      <p class="hero__subtitle" [@fadeInUp]="subtitleState">
+        Descubra o <strong>Método 5R</strong> — o protocolo exclusivo utilizado
+        por mais de 200 pacientes para alcançar um sorriso que irradia confiança
+        e elegância com lentes de resina.
+      </p>
+
+      <div class="hero__cta-group" [@fadeInUp]="ctaState">
+        <a href="#cta-final" class="btn btn--gold">
+          <span>Quero o eBook</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <p class="hero__cta-micro">Acesso imediato &bull; Acesso Vitalício</p>
+      </div>
+    </div>
+
+    <div class="hero__mockup" [@scaleIn]="mockupState">
+      <div class="hero__mockup-wrapper">
+        <div class="hero__book-shadow"></div>
+        <div class="hero__book">
+          <div class="hero__book-cover">
+            <div class="hero__book-ornament"></div>
+            <p class="hero__book-label">eBook Exclusivo</p>
+            <h3 class="hero__book-title">Método<br><span>5R</span></h3>
+            <p class="hero__book-subtitle">Transformação do Sorriso<br>com Lentes de Resina</p>
+            <div class="hero__book-author">Dr. Danilo Venâncio</div>
+            <div class="hero__book-badge">
+              <span>E-BOOK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__mockup-glow" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div class="hero__scroll-indicator" aria-label="Role para baixo">
+    <span class="hero__scroll-text">Descubra o método</span>
+    <div class="hero__scroll-icon">
+      <div class="hero__scroll-arrow"></div>
+    </div>
+  </div>
+</section>

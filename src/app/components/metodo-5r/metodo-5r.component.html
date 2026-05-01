@@ -1,0 +1,40 @@
+<section
+  class="metodo"
+  appIntersect
+  (visible)="onSectionVisible()"
+  [class.section-visible]="sectionVisible()"
+>
+  <div class="metodo__container">
+    <div class="metodo__header reveal-element" [class.visible]="sectionVisible()">
+      <p class="section-label">O Protocolo</p>
+      <h2 class="section-title">O Método <span class="text-gold">5R</span></h2>
+      <div class="gold-divider"></div>
+      <p class="metodo__intro">
+        Um protocolo científico desenvolvido ao longo de 12 anos de prática clínica,
+        combinando as mais avançadas técnicas de odontologia estética para entregar
+        resultados extraordinários com lentes de resina composta.
+      </p>
+    </div>
+
+    <div class="metodo__cards">
+      @for (card of cards; track card.numero; let i = $index) {
+        <div
+          class="metodo-card"
+          appIntersect
+          [threshold]="0.2"
+          (visible)="onCardVisible(i)"
+          [class.visible]="visibleCards()[i]"
+        >
+          <div class="metodo-card__number">{{ card.numero }}</div>
+          <div class="metodo-card__icon" [innerHTML]="card.icon"></div>
+          <div class="metodo-card__letter">{{ card.letra }}</div>
+          <h4 class="metodo-card__title">{{ card.titulo }}</h4>
+          <p class="metodo-card__desc">{{ card.descricao }}</p>
+          <div class="metodo-card__line"></div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="metodo__bg-text" aria-hidden="true">5R</div>
+</section>

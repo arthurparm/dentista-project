@@ -1,0 +1,55 @@
+<section
+  class="aprend"
+  appIntersect
+  (visible)="onVisible()"
+  [class.section-visible]="sectionVisible()"
+>
+  <div class="aprend__container">
+    <div class="aprend__header reveal-element" [class.visible]="sectionVisible()">
+      <p class="section-label">Conteúdo do eBook</p>
+      <h2 class="section-title">O Que Você Vai<br><span class="text-gold">Aprender</span></h2>
+      <div class="gold-divider"></div>
+      <p class="aprend__intro">
+        Mais de 80 páginas de conteúdo prático e visual sobre como
+        transformar sorrisos com lentes de resina. Sem enrolação, direto ao ponto.
+      </p>
+    </div>
+
+    <div class="aprend__grid">
+      <div class="aprend__col reveal-element" [class.visible]="sectionVisible()" style="transition-delay: 200ms">
+        @for (item of coluna1; track item) {
+          <div class="aprend__item">
+            <div class="aprend__check" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path d="M3 8l3.5 3.5L13 4" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p>{{ item }}</p>
+          </div>
+        }
+      </div>
+
+      <div class="aprend__col reveal-element" [class.visible]="sectionVisible()" style="transition-delay: 350ms">
+        @for (item of coluna2; track item) {
+          <div class="aprend__item">
+            <div class="aprend__check" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path d="M3 8l3.5 3.5L13 4" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p>{{ item }}</p>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="aprend__bonus reveal-element" [class.visible]="sectionVisible()" style="transition-delay: 500ms">
+      <div class="aprend__bonus-inner">
+        <div class="aprend__bonus-tag">BÔNUS EXCLUSIVO</div>
+        <p class="aprend__bonus-text">
+          Inclui planilha de planejamento digital + checklist do protocolo completo para você aplicar imediatamente
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

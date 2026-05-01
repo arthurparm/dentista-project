@@ -1,0 +1,92 @@
+<footer class="footer">
+  <div class="footer__top-line" aria-hidden="true"></div>
+
+  <div class="footer__container">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <span class="footer__logo-line"></span>
+        <h3>Dr. Danilo Venâncio</h3>
+        <span class="footer__logo-line"></span>
+      </div>
+      <p class="footer__tagline">Especialista em Odontologia Estética<br>& Lentes de Resina</p>
+      <div class="footer__socials">
+        @for (s of socials; track s.label) {
+          <a
+            [href]="s.href"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer__social"
+            [attr.aria-label]="s.label"
+          >
+            @switch (s.icon) {
+              @case ('instagram') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              }
+              @case ('facebook') {
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M14 8.5V6.75c0-.78.18-1.25 1.34-1.25H17V2.13A22.1 22.1 0 0 0 14.18 2C11.38 2 9.5 3.72 9.5 6.88V8.5H6.4V12h3.1v10H14V12h3.05l.45-3.5H14z" />
+                </svg>
+              }
+              @case ('youtube') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                  <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+                </svg>
+              }
+              @case ('tiktok') {
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M16.6 2c.34 2.26 1.62 3.92 3.9 4.07v3.58a7.02 7.02 0 0 1-3.85-1.17v6.69c0 3.38-2.15 6.83-6.48 6.83C6.7 22 4 19.54 4 16.31c0-3.68 3.02-6.4 6.95-5.72v3.74c-1.7-.54-3.3.52-3.3 1.92 0 1.25 1.05 2.11 2.34 2.11 1.5 0 2.52-.88 2.52-2.95V2h4.09z" />
+                </svg>
+              }
+              @case ('linkedin') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              }
+            }
+          </a>
+        }
+      </div>
+    </div>
+
+    <div class="footer__info">
+      <div class="footer__col">
+        <h5 class="footer__col-title">Contato</h5>
+        <ul class="footer__list">
+          <li>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4h12v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zM2 4l6 5 6-5" stroke="#C9A84C" stroke-width="1.2"/></svg>
+            contato@rafaelmonteiro.com.br
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M14 10.67c-.67 1.33-2.67 2.67-4 2.67C4 13.34 2.67 8 2.67 5.33c0-1.33 1.33-3.33 2.67-4l2 4-1.34 1.34A6.68 6.68 0 0 0 9.33 10l1.34-1.34 3.33 2z" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            (11) 99999-9999
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="7" r="3" stroke="#C9A84C" stroke-width="1.2"/><path d="M8 1C4.69 1 2 3.69 2 7c0 4.5 6 9 6 9s6-4.5 6-9c0-3.31-2.69-6-6-6z" stroke="#C9A84C" stroke-width="1.2"/></svg>
+            São Paulo, SP — Brasil
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h5 class="footer__col-title">Registro</h5>
+        <ul class="footer__list">
+          <li>CRO-SP 00000</li>
+          <li>Especialista em Dentística</li>
+          <li>ABOE — Membro Ativo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p>&copy; {{ ano }} Dr. Danilo Venâncio. Todos os direitos reservados.</p>
+    <p>Este material é exclusivamente educativo e não substitui avaliação clínica profissional.</p>
+  </div>
+</footer>
